@@ -6,7 +6,7 @@ import CustomLink from '../CustomLink/CustomLink';
 const Header = () => {
     return (
         <>
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
                 <Container>
                     <Navbar.Brand as={Link} to="#home">
                         Random User
@@ -18,7 +18,7 @@ const Header = () => {
                             <CustomLink to="/user">User</CustomLink>
                             <CustomLink to="/login">Login</CustomLink>
                         </Nav>
-                        <span className='text-white'>
+                        <span>
                             user
                         </span>
                     </Navbar.Collapse>

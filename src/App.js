@@ -8,10 +8,11 @@ import User from './Component/User/User';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/home' element={<Home />} />
         <Route path='/user' element={<User />} />
         <Route path='/login' element={<Login />} />
       </Routes>
