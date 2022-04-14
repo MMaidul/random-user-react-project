@@ -5,11 +5,11 @@ import SingleUser from '../SingleUser/SingleUser';
 const User = () => {
     const allUsers = useUser(`https://jsonplaceholder.typicode.com/users`);
     return (
-        <div className="container">
+        <div className="container mt-5">
             <div className='row'>
                 {
                     allUsers?.map(userData => <SingleUser
-                        key={userData}
+                        key={userData.id}
                         userData={userData}
                     />)
                 }

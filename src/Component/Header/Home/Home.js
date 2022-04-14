@@ -6,25 +6,24 @@ import SingleUser from '../../SingleUser/SingleUser';
 const Home = () => {
     const usersData = useUser(`https://jsonplaceholder.typicode.com/users`);
     if (usersData.length) {
-        usersData.length = 4;
+        usersData.length = 6;
         console.log(usersData.length);
         console.log(usersData);
     }
 
     return (
-        <div className='container'>
-            <h2>All user:{usersData.length}</h2>
+        <div className='container mt-5'>
             <div className="row">
                 {
                     usersData.map(userData => <SingleUser
-                        key={userData}
+                        key={userData.id}
                         userData={userData}
                     />
                     )
                 }
             </div>
             <Link to='/user'>
-                <h4>Load More...</h4>
+                <button className='btn btn-primary px-5'> <h4>Load More...</h4></button>
             </Link>
         </div>
     );
