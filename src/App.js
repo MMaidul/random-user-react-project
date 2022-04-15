@@ -6,6 +6,7 @@ import Home from './Component/Header/Home/Home';
 import Login from './Component/Login/Login';
 import User from './Component/User/User';
 import UserInfo from './Component/UserInfo/UserInfo';
+import RequireAuth from './RequireAuth/RequireAuth';
 
 function App() {
   return (
@@ -15,7 +16,11 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/home' element={<Home />} />
         <Route path='/user' element={<User />} />
-        <Route path='/user/:userId' element={<UserInfo />}>
+        <Route path='/user/:userId' element={
+          <RequireAuth>
+            <UserInfo />
+          </RequireAuth>
+        }>
         </Route>
         <Route path='/login' element={<Login />} />
       </Routes>
